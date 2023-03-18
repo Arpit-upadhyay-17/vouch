@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600&display=swap');
+
+
+*{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.login-page{
+    height: 1080px;
+    display: grid;
+    grid-template-columns: 4.5fr 7.5fr;
+}
+
+.login-details{
+    place-self: center;
+    height:  100%;
+    font-size: 2em;
+}
+
+.login-form{
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.terms{
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.some-info{
+    height: 100%;
+    background-color: rgba(19, 52, 179, 1);
+    
+}
+
+.input-div{
+    padding: 16px 12px;
+    /* width: 500px; */
+    border: 1px solid rgba(113, 113, 113, 0.23);
+    border-radius: 8px;
+    margin: 15px 10px;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    place-items : center ; 
+}
+
+.input-div img {
+    align-self: center;
+    width: 35px;
+}
+
+.input-div input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    color: rgb(77, 77, 77);
+    font-weight: 500;
+}
+
+/* .submit{
+    padding: 16px 12px;
+    border: none;
+    border-radius: 8px;
+    margin: 15px 10px
+} */
+
+
+
+.submit{
+    background-color: #0000ffc9;
+    display: flex;
+    transition: all 0.2s;
+}
+.submit input{
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* .submit button{
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}  */
+
+.submit:hover {
+    background-color: rgb(2, 2, 173);
+}
+
+.some-info{
+    display: grid;
+    place-items: center;
+    grid-template-rows: 5fr 2fr;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/* .some-info center{
+    height: inherit;
+    width: 80%;
+   
+} */
+
+
+.box{
+
+    width: 60%;
+    height: 50%;
+    background-color: white;
+    border-radius: 8px;
+    align-self: center;
+}
+
+.box-1{
+    /* text-align: center; */
+    /* text-align: justify; */
+margin: 20px;
+align-self: baseline;
+text-align: justify;
+}
+
+.box-1 p {
+    font-size: 1.6em;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+}
+
+.box-1 span{
+    color: rgba(255, 255, 255, 0.705);
+    font-size: 1em;
+    letter-spacing: 1.2px;
+    /* text-align: justify; */
+    
+}
+
+
+@media screen and (max-width : 1368px) {
+    .login-details{
+        font-size: 1.5em;
+    }
+    .login-page{
+        /* max-width: 1368px; */
+        height: 768px;
+    }
+    .input-div{
+        padding: 8px 12px;
+        margin: 10px 8px;
+    }
+    .input-div input{
+        font-size: 0.9em;
+    }
+    .input-div img {
+        width: 24px;
+    }
+
+    .terms{
+        margin-top: 10px;
+        height: 50% ;
+    }
+    .login-form{
+        height: 50%;
+    }
+    .some-info{
+        grid-template-rows: 5fr 2.5fr;
+    }
+
+    .box-1 p{
+        font-size: 1.3em;
+    }
+    .box-1 span{
+        font-size: 0.9em;
+    }
+    
+}
+
+
+@media screen and (max-width : 1000px) {
+    .login-details{
+        font-size: 1.2em;
+    }
+    /* .input-div{
+        padding: 6px 10px;
+        margin: 8px 6px;
+    } */
+    .input-div input{
+        font-size: 1em;
+    }
+    .input-div img {
+        width: 20px;
+    }
+
+    .terms{
+        margin-top: 8px;
+        height: 50% ;
+    }
+    .login-form{
+        height: 50%;
+    }
+}
+
+
+@media screen and (max-width : 768px ) {
+    .login-details{
+        font-size: 1em;
+    }
+    .login-page{
+        grid-template-columns: 1fr;
+        /* height: auto; */
+    }
+
+    .input-div img {
+        width: 18px;
+    }
+
+    .terms{
+        margin-top: 7px;
+        /* height: 50% ; */
+    }
+    .some-info {
+        grid-row-start: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .login-details{
+        height: fit-content;
+        /* padding-top: 20px; */
+    }
+    .box-1 p{
+        font-size: 1.4em;
+    }
+    .box-1 span{
+        font-size: 0.7em;
+        line-height: 0.2;
+
+    }
+    .box{
+        height: 60%;
+        width: 80%;
+    }
+    /* .login-form{
+        height: 50%;
+    } */
+}
