@@ -1,11 +1,16 @@
+import { useContext, useEffect, useState } from "react";
 import "../style/Login.css";
 import username from "../assets/username.svg";
 import password from "../assets/password.svg";
-import { useEffect, useState } from "react";
+import {loginContext} from "../Context/Context";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+    
+    const {  handleLogin , Token ,  }= useContext(loginContext);
+    const navigate = useNavigate();
     const [ credentials , setCredentials ] = useState({
-        username : "",
+        email : "",
         password :""
     })
 
@@ -13,24 +18,21 @@ const Login = () => {
         const { name , value } = e.target;
         return setCredentials({...credentials , [name] : value })
     }
-
-    const handleSubmit = async (e) => {
+    
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const { username , password } = e.target;
-        console.log( username , password )
-        const response = await fetch("https://reqres.in/api/login" , 
-        {
-            method : "POST",
-            body :  credentials
-        }
-        )
-
-        console.log(response);
+       return  handleLogin(credentials)
     }
     
     useEffect(() => {
         document.title = "Login page"
     })
+
+    useEffect(() => {
+        if(Token !== null ){
+          return  navigate("/user/view");
+        }
+    } , [Token] )
 
 
     return (
@@ -46,7 +48,7 @@ const Login = () => {
                 <form  onSubmit={handleSubmit} autoComplete="off" >
                     <div className="input-div username">
                         <label htmlFor="username"  style={{ display : "flex" }} ><img src={username}  alt="icon" /></label>
-                        <input type="text" required name="username" value={credentials.username}  onChange={handleChange} id="username" placeholder="Username" />
+                        <input type="email" required name="email" value={credentials.email}  onChange={handleChange} id="username" placeholder="Username" />
                     </div>
                     <div className="input-div password">
                         <label htmlFor="password" required style={{ display : "flex" }} ><img src={password}  alt="icon" /></label>
