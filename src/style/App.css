@@ -80,7 +80,7 @@ body{
     .Sidebar{
        position: absolute;
        top: 0;
-       left: -360px;
+       /* left: -360px; */
        
        height: 100%;
     }

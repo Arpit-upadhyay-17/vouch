@@ -3,15 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
 
-  const [ position , setPosition ] = useState(0)
+  const [ position , setPosition ] = useState(-360)
 
   const handleClick = () => {
-    if( position !== 0 ){
-      console.log(position)
-     return  setPosition(0)
+    if(position !== 0 ){
+      setPosition(0)
     }else{
-      console.log(position)
-      return  setPosition(-360)
+      setPosition(-360)
     }
   }
   return (

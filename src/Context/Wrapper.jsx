@@ -7,10 +7,10 @@ const Wrapper = ({ children }) => {
 
      
 
-    const handleLogin = async (credentials ) => {
+    const handleLogin = (credentials ) => {
         console.log(credentials);
-        try {
-            const response = await fetch("https://reqres.in/api/login" , 
+    
+             fetch("https://reqres.in/api/login" , 
         {
             method : "post",
             headers : {
@@ -19,15 +19,19 @@ const Wrapper = ({ children }) => {
             },
             body :  JSON.stringify(credentials)
         }
-        )
-        if(response.status === 200 ){
-            setToken( response.json());
-           return alert("Login successfully");
-        }    
-        } catch (error) {
-            console.log(error.message);
-            return error
-        }
+        ).then(res => res.json())
+        .then(res => {
+            console.log(res);
+            if( !res.error){
+                setToken(res);
+               return alert("Login successfully");
+            }
+            return alert(res.error);
+        }).catch((err) => {
+            alert(err);
+        })
+         
+            
     }
 
 
